@@ -1,0 +1,6 @@
+module Pods_Neobis_iOS_Market {
+  umbrella header "Pods-Neobis_iOS_Market-umbrella.h"
+
+  export *
+  module * { export * }
+}
