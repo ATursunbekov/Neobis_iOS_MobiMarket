@@ -67,9 +67,11 @@ class PhoneViewController: UIViewController {
 }
 
 extension PhoneViewController: PhoneResponseDelegate {
-    func successResponse(username: String, delegate: PhoneDelegate, number: String) {
+    func successResponse() {
         DispatchQueue.main.async {
-            self.navigationController?.pushViewController(PhoneConfirmationViewController(delegate: delegate, phone: number), animated: true)
+            guard let viewModel = self.viewModel else {return}
+            
+            self.navigationController?.pushViewController(PhoneConfirmationViewController(viewModel: viewModel), animated: true)
         }
     }
 }

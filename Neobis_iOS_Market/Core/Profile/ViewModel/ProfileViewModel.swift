@@ -27,7 +27,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
     
     func getUserData() {
         let token = DataManager.manager.getToken()
-        let header = ["Authorization" : "Bearer \(token)"]
+        let header = ["Authorization" : "Bearer \(token)", "Content-Type" : "application/json"]
     
         if token != "" {
             NetworkManager.request(urlString: url,method: .get ,headers: header) { (result: Result<ProfileModel, NetworkError>)  in

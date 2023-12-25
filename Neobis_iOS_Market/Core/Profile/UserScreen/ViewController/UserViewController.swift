@@ -59,6 +59,10 @@ class UserViewController: UIViewController {
             }
         }
         print(userData)
+        
+        if let imageData = userView.userImage.image?.jpegData(compressionQuality: 0.8) {
+            viewModel?.uploadImage(image: imageData)
+        }
     }
     
     @objc func phonePressed() {
@@ -115,7 +119,7 @@ extension UserViewController: PhoneDelegate {
         self.viewModel?.phoneNumber = phoneNumber
         if let cell = userView.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? CustomTableViewCell {
             cell.buttonText2.text = phoneNumber
-        }
+        } 
     }
 }
 

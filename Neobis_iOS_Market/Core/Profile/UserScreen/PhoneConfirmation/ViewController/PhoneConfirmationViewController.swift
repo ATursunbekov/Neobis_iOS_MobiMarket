@@ -9,13 +9,11 @@ import UIKit
 
 class PhoneConfirmationViewController: UIViewController {
     
-    var delegate: PhoneDelegate?
-    var phoneNumber: String?
+    var viewModel: PhoneViewModelProtocol?
     
-    init(delegate: PhoneDelegate, phone: String) {
+    init(viewModel: PhoneViewModelProtocol) {
         super.init(nibName: nil, bundle: nil)
-        self.delegate = delegate
-        self.phoneNumber = phone
+        self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
@@ -33,6 +31,7 @@ class PhoneConfirmationViewController: UIViewController {
         confirmView.textField.delegate = self
         startTimer()
         setupTargets()
+        viewModel?.confirmationDelegate = self
     }
     
     
@@ -58,16 +57,14 @@ class PhoneConfirmationViewController: UIViewController {
         confirmView.loader.startAnimating()
         confirmView.timer.isHidden = false
         startTimer()
-        secondsRemaining += 10
+        secondsRemaining += 60
         confirmView.validationText.isHidden = true
+        viewModel?.sendConfirmationCode()
     }
     
     @objc func checkCode() {
-        if let text = confirmView.textField.text, text.count == 4 , text == "1234"{
-            delegate?.didEnterPhoneNumber(phoneNumber ?? "")
-            if let viewControllers = navigationController?.viewControllers {
-                navigationController?.popToViewController(viewControllers[1], animated: true)
-            }
+        if let text = confirmView.textField.text, text.count == 4 {
+            viewModel?.checkConfirmationNumber(code: text)
         } else if !confirmView.validationText.isHidden {
             confirmView.validationText.isHidden = true
         } else {
@@ -93,5 +90,22 @@ extension PhoneConfirmationViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newLength = (textField.text?.count ?? 0) + string.count - range.length
         return newLength <= 4
+    }
+}
+
+extension PhoneConfirmationViewController: PhoneConfirmationDelegate {
+    func confirmationFailureResponse() {
+        DispatchQueue.main.async {
+            self.confirmView.validationText.isHidden = false
+        }
+    }
+    
+    func confirmationSuccessResponse(phone: String) {
+        DispatchQueue.main.async {
+            self.viewModel?.delegate?.didEnterPhoneNumber(phone)
+            if let viewControllers = self.navigationController?.viewControllers {
+                self.navigationController?.popToViewController(viewControllers[1], animated: true)
+            }
+        }
     }
 }

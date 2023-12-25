@@ -56,8 +56,9 @@ class RegisterViewModel: RegisterViewModelProtocol {
     func registerUser() {
         if let mail = mail, let username = username, let password = password2 {
             let user = RegisterUserRequest(email: mail, username: username, password: password)
+            let header = ["Content-Type" : "application/json"]
             
-            NetworkManager.request(urlString: url, body: user) {[self] (result: Result<String, NetworkError>) in
+            NetworkManager.request(urlString: url,body: user, headers: header) {[self] (result: Result<String, NetworkError>) in
                 switch result {
                 case .success(let res):
                     print(res)

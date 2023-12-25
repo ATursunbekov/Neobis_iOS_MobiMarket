@@ -24,8 +24,9 @@ class LoginViewModel: LoginViewModelProtocol {
     private let url = "http://mobi-market.up.railway.app/api/auth/sign-in"
     
     func loginUser(body: SignInUserRequest) {
+        let header = ["Content-Type" : "application/json"]
         
-        NetworkManager.request(urlString: url,body: body) { [self] (result: Result<ResponseSignIn, NetworkError>) in
+        NetworkManager.request(urlString: url,body: body, headers: header) { [self] (result: Result<ResponseSignIn, NetworkError>) in
             switch result {
             case .success(let res):
                 DataManager.manager.setToken(token: res.token)

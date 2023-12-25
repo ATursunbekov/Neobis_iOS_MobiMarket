@@ -22,6 +22,7 @@ struct NetworkManager {
         urlString: String,
         method: HTTPMethod = .post,
         parameters: [String: Any]? = nil,
+        systemBody: Data? = nil,
         body: D? = Model(),
         headers: [String: String]? = nil,
         completion: @escaping (Result<T, NetworkError>) -> Void
@@ -33,14 +34,16 @@ struct NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         headers?.forEach { key, value in
             request.addValue(value, forHTTPHeaderField: key)
         }
         
         // Set HTTP body if there are parameters for POST requests
         do {
-            if method == .post, let parameters = parameters {
+            if systemBody == systemBody {
+                request.httpBody = systemBody
+            } else if method == .post, let parameters = parameters {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
             } else if (method == .post || method == .put), let body = body, D.self != Model.self {
                 request.httpBody = try JSONEncoder().encode(body)

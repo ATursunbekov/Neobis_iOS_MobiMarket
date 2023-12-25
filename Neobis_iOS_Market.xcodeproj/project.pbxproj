@@ -38,6 +38,8 @@
 		775097C32B38C26C006EEB80 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775097C22B38C26C006EEB80 /* PhoneViewModel.swift */; };
 		775097C72B38C4FC006EEB80 /* PhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775097C62B38C4FC006EEB80 /* PhoneModel.swift */; };
 		776706C12B30477A00E7DB17 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776706C02B30477A00E7DB17 /* NetworkManager.swift */; };
+		7770F6112B396FD100DFE9DF /* ConfirmationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F6102B396FD100DFE9DF /* ConfirmationModel.swift */; };
+		7770F6142B39C2A100DFE9DF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F6132B39C2A100DFE9DF /* UserModel.swift */; };
 		77A608CC2B32E4A500EC79F4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A608CB2B32E4A500EC79F4 /* RegisterViewModel.swift */; };
 		77A608D12B33055200EC79F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A608D02B33055200EC79F4 /* MainViewController.swift */; };
 		77A608D32B33056800EC79F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A608D22B33056800EC79F4 /* MainView.swift */; };
@@ -93,6 +95,8 @@
 		775097C22B38C26C006EEB80 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		775097C62B38C4FC006EEB80 /* PhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneModel.swift; sourceTree = "<group>"; };
 		776706C02B30477A00E7DB17 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7770F6102B396FD100DFE9DF /* ConfirmationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModel.swift; sourceTree = "<group>"; };
+		7770F6132B39C2A100DFE9DF /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		77A608CB2B32E4A500EC79F4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		77A608D02B33055200EC79F4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		77A608D22B33056800EC79F4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				77BF29012B36E584008E4575 /* PhoneConfirmation */,
 				771373712B3618D800103708 /* PhoneScreen */,
+				7770F6122B39C28E00DFE9DF /* Model */,
 				775097BF2B388AA2006EEB80 /* ViewModel */,
 				7713736E2B35E05A00103708 /* CustomCell */,
 				771373492B35ACAD00103708 /* ViewController */,
@@ -394,6 +399,22 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		7770F60F2B396A8B00DFE9DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7770F6102B396FD100DFE9DF /* ConfirmationModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7770F6122B39C28E00DFE9DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7770F6132B39C2A100DFE9DF /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		77A608CD2B33051800EC79F4 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +553,7 @@
 		77BF29012B36E584008E4575 /* PhoneConfirmation */ = {
 			isa = PBXGroup;
 			children = (
+				7770F60F2B396A8B00DFE9DF /* ViewModel */,
 				77BF29032B36E59F008E4575 /* ViewController */,
 				77BF29022B36E59A008E4575 /* View */,
 			);
@@ -691,6 +713,7 @@
 				775097BE2B3831A4006EEB80 /* ProfileModel.swift in Sources */,
 				7738840A2B2A09DF00C271F1 /* CustomTextField.swift in Sources */,
 				773E7B842B2B6C3400D1E9F4 /* CustomSecureTextField.swift in Sources */,
+				7770F6142B39C2A100DFE9DF /* UserModel.swift in Sources */,
 				772B38BB2B2CDFBC0067A1B6 /* PasswordView.swift in Sources */,
 				77B1584D2B285C90006EB26D /* LoginViewController.swift in Sources */,
 				771373752B36190500103708 /* PhoneViewController.swift in Sources */,
@@ -723,6 +746,7 @@
 				774604B72B317891005ADAD0 /* Constants.swift in Sources */,
 				771373702B35E07700103708 /* CustomTableViewCell.swift in Sources */,
 				77BF29072B36E774008E4575 /* PhoneConfirmationViewController.swift in Sources */,
+				7770F6112B396FD100DFE9DF /* ConfirmationModel.swift in Sources */,
 				77A608CC2B32E4A500EC79F4 /* RegisterViewModel.swift in Sources */,
 				771373772B36191900103708 /* PhoneView.swift in Sources */,
 				77FA5B192B34BD6C0056EC46 /* ChatViewController.swift in Sources */,

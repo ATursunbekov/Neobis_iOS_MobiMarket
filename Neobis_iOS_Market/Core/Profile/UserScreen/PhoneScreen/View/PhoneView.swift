@@ -43,6 +43,7 @@ class PhoneView: UIView {
 """
         label.numberOfLines = 0
         label.textColor = .gray
+        label.textAlignment = .center
         label.font = UIFont(name: "GothamPro-Medium", size: 16)
         return label
     }()
