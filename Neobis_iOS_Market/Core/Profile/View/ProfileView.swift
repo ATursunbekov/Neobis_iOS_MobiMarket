@@ -31,6 +31,10 @@ class ProfileView: UIView {
     lazy var userImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "profile"))
         image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.layer.masksToBounds = false
+        image.layer.cornerRadius = 40
+        image.clipsToBounds = true
         return image
     }()
     

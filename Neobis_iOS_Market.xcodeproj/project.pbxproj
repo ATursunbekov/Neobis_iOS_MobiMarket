@@ -17,6 +17,15 @@
 		771373702B35E07700103708 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7713736F2B35E07700103708 /* CustomTableViewCell.swift */; };
 		771373752B36190500103708 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771373742B36190500103708 /* PhoneViewController.swift */; };
 		771373772B36191900103708 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771373762B36191900103708 /* PhoneView.swift */; };
+		7720CBA62B3C2AAF00F43164 /* Extention+HidingTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBA52B3C2AAF00F43164 /* Extention+HidingTabBar.swift */; };
+		7720CBA82B3C38BA00F43164 /* Extention+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBA72B3C38BA00F43164 /* Extention+ImageView.swift */; };
+		7720CBAB2B3C488100F43164 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBAA2B3C488100F43164 /* CustomCollectionViewCell.swift */; };
+		7720CBAE2B3C6FA000F43164 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBAD2B3C6FA000F43164 /* MainViewModel.swift */; };
+		7720CBB12B3C707300F43164 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBB02B3C707300F43164 /* MainModel.swift */; };
+		7720CBB52B3C80E400F43164 /* MainDeatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBB42B3C80E400F43164 /* MainDeatailViewController.swift */; };
+		7720CBB72B3C80F100F43164 /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBB62B3C80F100F43164 /* MainDetailView.swift */; };
+		7720CBB92B3C812000F43164 /* MainDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBB82B3C812000F43164 /* MainDetailViewModel.swift */; };
+		7720CBBB2B3C836600F43164 /* MainDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720CBBA2B3C836600F43164 /* MainDetailModel.swift */; };
 		772B38B92B2CDFAA0067A1B6 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B38B82B2CDFAA0067A1B6 /* PasswordViewController.swift */; };
 		772B38BB2B2CDFBC0067A1B6 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B38BA2B2CDFBC0067A1B6 /* PasswordView.swift */; };
 		772B38C12B2CF2570067A1B6 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772B38C02B2CF2570067A1B6 /* ConfirmationViewController.swift */; };
@@ -54,6 +63,7 @@
 		77B1586A2B288A76006EB26D /* GothamPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158662B288A76006EB26D /* GothamPro-Bold.ttf */; };
 		77B1586B2B288A76006EB26D /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158672B288A76006EB26D /* GothamPro-Medium.ttf */; };
 		77B1586C2B288A76006EB26D /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158682B288A76006EB26D /* GothamPro.ttf */; };
+		77B59FA72B3AEC3200622FFD /* UploadingUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B59FA62B3AEC3200622FFD /* UploadingUserData.swift */; };
 		77BF29052B36E5B0008E4575 /* PhoneConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF29042B36E5B0008E4575 /* PhoneConfirmationView.swift */; };
 		77BF29072B36E774008E4575 /* PhoneConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF29062B36E774008E4575 /* PhoneConfirmationViewController.swift */; };
 		77FA5B112B347D5C0056EC46 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA5B102B347D5C0056EC46 /* CustomTabBarController.swift */; };
@@ -74,6 +84,15 @@
 		7713736F2B35E07700103708 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		771373742B36190500103708 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		771373762B36191900103708 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		7720CBA52B3C2AAF00F43164 /* Extention+HidingTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+HidingTabBar.swift"; sourceTree = "<group>"; };
+		7720CBA72B3C38BA00F43164 /* Extention+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+ImageView.swift"; sourceTree = "<group>"; };
+		7720CBAA2B3C488100F43164 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		7720CBAD2B3C6FA000F43164 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		7720CBB02B3C707300F43164 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		7720CBB42B3C80E400F43164 /* MainDeatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDeatailViewController.swift; sourceTree = "<group>"; };
+		7720CBB62B3C80F100F43164 /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
+		7720CBB82B3C812000F43164 /* MainDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailViewModel.swift; sourceTree = "<group>"; };
+		7720CBBA2B3C836600F43164 /* MainDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailModel.swift; sourceTree = "<group>"; };
 		772B38B82B2CDFAA0067A1B6 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		772B38BA2B2CDFBC0067A1B6 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 		772B38C02B2CF2570067A1B6 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +132,7 @@
 		77B158662B288A76006EB26D /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Bold.ttf"; sourceTree = "<group>"; };
 		77B158672B288A76006EB26D /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		77B158682B288A76006EB26D /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
+		77B59FA62B3AEC3200622FFD /* UploadingUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingUserData.swift; sourceTree = "<group>"; };
 		77BF29042B36E5B0008E4575 /* PhoneConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationView.swift; sourceTree = "<group>"; };
 		77BF29062B36E774008E4575 /* PhoneConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationViewController.swift; sourceTree = "<group>"; };
 		77FA5B102B347D5C0056EC46 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -205,8 +225,6 @@
 		771373472B35AC9C00103708 /* UserScreen */ = {
 			isa = PBXGroup;
 			children = (
-				77BF29012B36E584008E4575 /* PhoneConfirmation */,
-				771373712B3618D800103708 /* PhoneScreen */,
 				7770F6122B39C28E00DFE9DF /* Model */,
 				775097BF2B388AA2006EEB80 /* ViewModel */,
 				7713736E2B35E05A00103708 /* CustomCell */,
@@ -265,6 +283,41 @@
 				771373742B36190500103708 /* PhoneViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7720CBA92B3C486400F43164 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				7720CBAA2B3C488100F43164 /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		7720CBAC2B3C6F8400F43164 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7720CBAD2B3C6FA000F43164 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7720CBAF2B3C706900F43164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7720CBB02B3C707300F43164 /* MainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7720CBB22B3C809400F43164 /* MainDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7720CBB42B3C80E400F43164 /* MainDeatailViewController.swift */,
+				7720CBB62B3C80F100F43164 /* MainDetailView.swift */,
+				7720CBB82B3C812000F43164 /* MainDetailViewModel.swift */,
+				7720CBBA2B3C836600F43164 /* MainDetailModel.swift */,
+			);
+			path = MainDetailScreen;
 			sourceTree = "<group>";
 		};
 		772B38B32B2CDF300067A1B6 /* FirstScreen */ = {
@@ -343,6 +396,8 @@
 			children = (
 				7738840C2B2A0A0200C271F1 /* Extention+UIColor.swift */,
 				773E7B852B2B753C00D1E9F4 /* Extention+UIButton.swift */,
+				7720CBA52B3C2AAF00F43164 /* Extention+HidingTabBar.swift */,
+				7720CBA72B3C38BA00F43164 /* Extention+ImageView.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -411,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				7770F6132B39C2A100DFE9DF /* UserModel.swift */,
+				77B59FA62B3AEC3200622FFD /* UploadingUserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +474,9 @@
 		77A608CD2B33051800EC79F4 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				7720CBAF2B3C706900F43164 /* Model */,
+				7720CBAC2B3C6F8400F43164 /* ViewModel */,
+				7720CBA92B3C486400F43164 /* CustomCell */,
 				77A608CF2B33053D00EC79F4 /* View */,
 				77A608CE2B33052D00EC79F4 /* ViewController */,
 			);
@@ -484,12 +543,16 @@
 				776706BF2B30476300E7DB17 /* API */,
 				77A608D42B343D5A00EC79F4 /* DataManager */,
 				77FA5B152B34BD4B0056EC46 /* OtherScreens */,
+				77BF29012B36E584008E4575 /* PhoneConfirmation */,
+				771373712B3618D800103708 /* PhoneScreen */,
+				771373472B35AC9C00103708 /* UserScreen */,
 				77FA5B122B34BD220056EC46 /* Profile */,
 				774604B82B317919005ADAD0 /* Models */,
 				770FC26A2B2C5BDC001E91CB /* RegisterScreen */,
 				773884082B2A099900C271F1 /* CustomViews */,
 				77B1585E2B28716C006EB26D /* LoginScreen */,
 				77A608CD2B33051800EC79F4 /* MainScreen */,
+				7720CBB22B3C809400F43164 /* MainDetailScreen */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -579,7 +642,6 @@
 		77FA5B122B34BD220056EC46 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				771373472B35AC9C00103708 /* UserScreen */,
 				775097BC2B38316D006EEB80 /* Model */,
 				771373412B3582E400103708 /* ViewModel */,
 				771373402B3582D300103708 /* ViewController */,
@@ -706,19 +768,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				772B38C12B2CF2570067A1B6 /* ConfirmationViewController.swift in Sources */,
+				7720CBAB2B3C488100F43164 /* CustomCollectionViewCell.swift in Sources */,
 				770FC2712B2C6123001E91CB /* RegistrationView.swift in Sources */,
 				774604C42B31DB2A005ADAD0 /* LoginViewModel.swift in Sources */,
+				7720CBB92B3C812000F43164 /* MainDetailViewModel.swift in Sources */,
 				7738840D2B2A0A0200C271F1 /* Extention+UIColor.swift in Sources */,
 				771373462B359C1800103708 /* CustomButton.swift in Sources */,
 				775097BE2B3831A4006EEB80 /* ProfileModel.swift in Sources */,
 				7738840A2B2A09DF00C271F1 /* CustomTextField.swift in Sources */,
+				7720CBAE2B3C6FA000F43164 /* MainViewModel.swift in Sources */,
 				773E7B842B2B6C3400D1E9F4 /* CustomSecureTextField.swift in Sources */,
 				7770F6142B39C2A100DFE9DF /* UserModel.swift in Sources */,
+				7720CBA82B3C38BA00F43164 /* Extention+ImageView.swift in Sources */,
+				7720CBB52B3C80E400F43164 /* MainDeatailViewController.swift in Sources */,
 				772B38BB2B2CDFBC0067A1B6 /* PasswordView.swift in Sources */,
 				77B1584D2B285C90006EB26D /* LoginViewController.swift in Sources */,
 				771373752B36190500103708 /* PhoneViewController.swift in Sources */,
+				7720CBBB2B3C836600F43164 /* MainDetailModel.swift in Sources */,
 				772B38B92B2CDFAA0067A1B6 /* PasswordViewController.swift in Sources */,
 				774604BC2B31793C005ADAD0 /* RegisterUserRequest.swift in Sources */,
+				77B59FA72B3AEC3200622FFD /* UploadingUserData.swift in Sources */,
 				770FC26F2B2C60F8001E91CB /* RegistrationViewController.swift in Sources */,
 				77A608D62B343D8700EC79F4 /* DataManager.swift in Sources */,
 				7713734D2B35CCB300103708 /* UserView.swift in Sources */,
@@ -726,6 +795,7 @@
 				77B158492B285C90006EB26D /* AppDelegate.swift in Sources */,
 				77BF29052B36E5B0008E4575 /* PhoneConfirmationView.swift in Sources */,
 				776706C12B30477A00E7DB17 /* NetworkManager.swift in Sources */,
+				7720CBB72B3C80F100F43164 /* MainDetailView.swift in Sources */,
 				775097C12B388ABC006EEB80 /* UserViewModel.swift in Sources */,
 				77A608D32B33056800EC79F4 /* MainView.swift in Sources */,
 				772B38C32B2CF2640067A1B6 /* ConfirmationView.swift in Sources */,
@@ -741,6 +811,7 @@
 				7713734B2B35ACE300103708 /* UserViewController.swift in Sources */,
 				77FA5B172B34BD5A0056EC46 /* WalletViewController.swift in Sources */,
 				775097BB2B382E2F006EEB80 /* ProfileViewModel.swift in Sources */,
+				7720CBB12B3C707300F43164 /* MainModel.swift in Sources */,
 				773E7B862B2B753C00D1E9F4 /* Extention+UIButton.swift in Sources */,
 				77B1584B2B285C90006EB26D /* SceneDelegate.swift in Sources */,
 				774604B72B317891005ADAD0 /* Constants.swift in Sources */,
@@ -751,6 +822,7 @@
 				771373772B36191900103708 /* PhoneView.swift in Sources */,
 				77FA5B192B34BD6C0056EC46 /* ChatViewController.swift in Sources */,
 				77FA5B112B347D5C0056EC46 /* CustomTabBarController.swift in Sources */,
+				7720CBA62B3C2AAF00F43164 /* Extention+HidingTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

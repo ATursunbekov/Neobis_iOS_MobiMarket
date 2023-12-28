@@ -33,6 +33,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
             NetworkManager.request(urlString: url,method: .get ,headers: header) { (result: Result<ProfileModel, NetworkError>)  in
                 switch result {
                 case .success(let res):
+                    print(res)
                     self.profileModel = res
                     self.delegate?.successfulResponse(res: res)
                 case .failure(let error):

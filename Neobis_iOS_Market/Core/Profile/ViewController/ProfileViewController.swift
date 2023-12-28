@@ -26,12 +26,15 @@ class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: profileView.changeButton)
         setupTargets()
         viewModel?.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         viewModel?.getUserData()
+        tabBarController?.tabBar.isHidden = false
     }
     
     @objc func changeProfilePressed() {
-        let secondViewController = UserViewController(viewModel: UserViewModel(userData: viewModel?.profileModel))
-        secondViewController.hidesBottomBarWhenPushed = true
+        let secondViewController = UserViewController(viewModel: UserViewModel(userData: viewModel?.profileModel), userImage: profileView.userImage.image)
         navigationController?.pushViewController(secondViewController, animated: true)
     }
     
@@ -50,6 +53,11 @@ extension ProfileViewController: ProfileDelegate {
             DispatchQueue.main.async {
                 self.profileView.userName.text = name
             }
+        }
+        guard var url = res.profilePhoto?.imageUrl else {return}
+        url = "https" + url.dropFirst(4)
+        if let imageUrl = URL(string: url) {
+                profileView.userImage.imageFrom(url: imageUrl)
         }
     }
 }

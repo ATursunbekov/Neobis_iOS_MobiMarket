@@ -52,7 +52,7 @@ class CustomTabBarController: UITabBarController {
     private func setupTabBar() {
         viewControllers = [
             generateVC(
-                viewController: MainViewController(),
+                viewController: UINavigationController(rootViewController: MainViewController(viewModel: MainViewModel())),
                 title: "Главная",
                 image: UIImage(named: "home")
             ),
@@ -63,7 +63,7 @@ class CustomTabBarController: UITabBarController {
             ),
             UIViewController(), // Placeholder for the center tab
             generateVC(
-                viewController: ChatViewController(),
+                viewController: UIViewController(),
                 title: "Чаты",
                 image: UIImage(named: "chat")
             ),

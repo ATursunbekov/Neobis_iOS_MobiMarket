@@ -17,20 +17,37 @@ class MainView: UIView {
         return image
     }()
     
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.backgroundColor = .clear
+        collection.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        collection.alwaysBounceVertical = true
+        return collection
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = UIColor(hex: "#F7F6F9")
         setupConstraints()
     }
     
     func setupConstraints() {
         addSubview(logoImage)
+        addSubview(collectionView)
         
         logoImage.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(52)
             make.width.equalTo(196)
             make.height.equalTo(44)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(logoImage.snp.bottom).offset(16)
+            make.bottom.equalToSuperview()
         }
     }
     

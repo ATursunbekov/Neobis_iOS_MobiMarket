@@ -14,10 +14,12 @@ protocol PhoneDelegate: AnyObject {
 class UserViewController: UIViewController {
     
     var viewModel: UserViewModelProtocol?
+    var userImage: UIImage?
     
-    init(viewModel: UserViewModelProtocol? = nil) {
+    init(viewModel: UserViewModelProtocol? = nil, userImage: UIImage? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        self.userImage = userImage
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +37,9 @@ class UserViewController: UIViewController {
         setupTargets()
         userView.tableView.delegate = self
         userView.tableView.dataSource = self 
+        userView.userImage.image = userImage
+        viewModel?.delegate = self
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func loadView() {
@@ -46,21 +51,23 @@ class UserViewController: UIViewController {
     }
     
     @objc func savePressed() {
-        var userData: [String] = []
-
-        for section in 0..<userView.tableView.numberOfSections {
-            for row in 0..<userView.tableView.numberOfRows(inSection: section) {
-                let indexPath = IndexPath(row: row, section: section)
-                if let cell = userView.tableView.cellForRow(at: indexPath) as? CustomTableViewCell {
-                    if let text = cell.getText() {
-                        userData.append(text)
-                    }
-                }
-            }
-        }
-        print(userData)
+//        var userData: [String] = []
+//
+//        for section in 0..<userView.tableView.numberOfSections {
+//            for row in 0..<userView.tableView.numberOfRows(inSection: section) {
+//                let indexPath = IndexPath(row: row, section: section)
+//                if let cell = userView.tableView.cellForRow(at: indexPath) as? CustomTableViewCell {
+//                    if let text = cell.getText() {
+//                        userData.append(text)
+//                    }
+//                }
+//            }
+//        }
+//        print(userData)
+//        
+//        viewModel?.uploadUserData(userData: userData)
         
-        if let imageData = userView.userImage.image?.jpegData(compressionQuality: 0.8) {
+        if let imageData = userView.userImage.image?.jpegData(compressionQuality: 0.1) {
             viewModel?.uploadImage(image: imageData)
         }
     }
@@ -110,8 +117,6 @@ extension UserViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
 
 extension UserViewController: PhoneDelegate {
@@ -120,6 +125,15 @@ extension UserViewController: PhoneDelegate {
         if let cell = userView.tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? CustomTableViewCell {
             cell.buttonText2.text = phoneNumber
         } 
+    }
+}
+
+extension UserViewController: UserDelegate {
+    func successfullResponse() {
+        DispatchQueue.main.async {
+            self.hidesBottomBarWhenPushed = false
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

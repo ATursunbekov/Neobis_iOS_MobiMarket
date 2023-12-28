@@ -34,14 +34,12 @@ struct NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         headers?.forEach { key, value in
             request.addValue(value, forHTTPHeaderField: key)
         }
         
-        // Set HTTP body if there are parameters for POST requests
         do {
-            if systemBody == systemBody {
+            if let systemBody = systemBody {
                 request.httpBody = systemBody
             } else if method == .post, let parameters = parameters {
                 request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
@@ -90,7 +88,6 @@ struct NetworkManager {
                 }
             }
         }
-        
         task.resume()
     }
 }

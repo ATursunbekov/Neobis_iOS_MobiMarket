@@ -3,7 +3,7 @@
 
 target 'Neobis_iOS_Market' do
 	pod 'SnapKit'
-
+	pod 'Alamofire', '~> 5.0'
   # Pods for Neobis_iOS_Market
 
 end
