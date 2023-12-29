@@ -15,6 +15,7 @@ protocol MainViewModelProtocol {
     var mainData: [MainModel]? {get set}
     var delegate: MainDelegate? {get set}
     func getUserData()
+    func getFavoriteProducts()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -33,6 +34,41 @@ class MainViewModel: MainViewModelProtocol {
                 case .success(let res):
                     self.mainData = res
                     self.delegate?.successResponse()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func getFavoriteProducts() {
+        let url = "https://mobi-market.up.railway.app/api/user/get-liked-products"
+        let token = DataManager.manager.getToken()
+        let header = ["Authorization" : "Bearer \(token)", "Content-Type" : "application/json"]
+    
+        if token != "" {
+            NetworkManager.request(urlString: url,method: .get ,headers: header) { (result: Result<[MainModel], NetworkError>)  in
+                switch result {
+                case .success(let res):
+                    self.mainData = res
+                    self.delegate?.successResponse()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    static func likeProduct(id: Int) {
+        let url = "https://mobi-market.up.railway.app/api/user/like?id=" + String(id)
+        let token = DataManager.manager.getToken()
+        let header = ["Authorization" : "Bearer \(token)", "Content-Type" : "application/json"]
+    
+        if token != "" {
+            NetworkManager.request(urlString: url,method: .put ,headers: header) { (result: Result<LikeModel, NetworkError>)  in
+                switch result {
+                case .success(_):
+                    print("Successfully liked")
                 case .failure(let error):
                     print(error)
                 }

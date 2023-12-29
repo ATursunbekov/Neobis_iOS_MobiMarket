@@ -16,4 +16,12 @@ extension UIButton {
             backgroundColor = UIColor(hex: "#C1C1C1")
         }
     }
+    
+    func updateLikeButton() {
+        if self.tintColor == .gray {
+            self.tintColor = .red
+        } else {
+            self.tintColor = .gray
+        }
+    }
 }

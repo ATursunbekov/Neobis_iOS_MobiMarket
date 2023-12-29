@@ -13,10 +13,11 @@ class MainDeatailViewController: UIViewController {
     var viewModel: MainDetailViewModelProtocol?
     var productImage: UIImage?
     
-    init(viewModel: MainDetailViewModelProtocol? = nil, productImage: UIImage? = nil) {
+    init(viewModel: MainDetailViewModelProtocol? = nil, productImage: UIImage? = nil, isFavorite: Bool = false) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         self.productImage = productImage
+        mainView.heartButton.tintColor = isFavorite ? .systemRed : .gray
     }
     
     required init?(coder: NSCoder) {
@@ -40,8 +41,21 @@ class MainDeatailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func likePressed() {
+        if mainView.heartButton.tintColor == .gray {
+            MainViewModel.likeProduct(id: viewModel?.mainDetailModel?.id ?? 0)
+            mainView.likeAmount.text = String((Int(mainView.likeAmount.text ?? "0") ?? 0) + 1)
+            mainView.heartButton.updateLikeButton()
+        } else {
+            let customAlertController = CustomLikeAlert(id: viewModel?.mainDetailModel?.id, delegate: self)
+            customAlertController.modalPresentationStyle = .overFullScreen
+            present(customAlertController, animated: false)
+        }
+    }
+    
     func addTargets() {
         mainView.backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
+        mainView.heartButton.addTarget(self, action: #selector(likePressed), for: .touchUpInside)
     }
 
     override func loadView() {
@@ -58,5 +72,13 @@ extension MainDeatailViewController: MainDeatailDelegate {
             self.mainView.shortDescription.text = response.shortDescription
             self.mainView.longDescription.text = response.fullDescription
         }
+    }
+}
+
+extension MainDeatailViewController: CustomLikeAlertDelegate {
+    func removeLike() {
+        mainView.heartButton.updateLikeButton()
+        let num = (Int(mainView.likeAmount.text ?? "0") ?? 0) - 1
+        mainView.likeAmount.text = String(num < 0 ? 0 : num)
     }
 }

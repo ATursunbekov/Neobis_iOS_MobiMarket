@@ -11,6 +11,7 @@ class CustomTabBarController: UITabBarController {
         setupConstraints()
         setupTabBar()
         tabBar.tintColor = UIColor(hex: "#5D5FEF")
+        addButton.addTarget(self, action: #selector(plusPressed), for: .touchUpInside)
     }
 
     lazy var customView: UIView = {
@@ -50,6 +51,8 @@ class CustomTabBarController: UITabBarController {
     }
 
     private func setupTabBar() {
+        let placeholder = UIViewController()
+        placeholder.tabBarItem.isEnabled = false
         viewControllers = [
             generateVC(
                 viewController: UINavigationController(rootViewController: MainViewController(viewModel: MainViewModel())),
@@ -61,7 +64,7 @@ class CustomTabBarController: UITabBarController {
                 title: "Кошелек",
                 image: UIImage(named: "wallet")
             ),
-            UIViewController(), // Placeholder for the center tab
+            placeholder, // Placeholder for the center tab
             generateVC(
                 viewController: UIViewController(),
                 title: "Чаты",
@@ -79,5 +82,11 @@ class CustomTabBarController: UITabBarController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = image
         return viewController
+    }
+    
+    @objc func plusPressed() {
+        let navController = UINavigationController(rootViewController: ProductViewController(viewModel: ProductViewModel()))
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true, completion: nil)
     }
 }

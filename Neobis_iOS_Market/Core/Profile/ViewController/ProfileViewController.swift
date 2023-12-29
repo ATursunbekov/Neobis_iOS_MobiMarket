@@ -38,8 +38,14 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(secondViewController, animated: true)
     }
     
+    @objc func navigateToFavoriteScreen() {
+        let secondViewController = FavoriteViewController(viewModel: MainViewModel())
+        navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
     func setupTargets() {
         profileView.changeButton.addTarget(self, action: #selector(changeProfilePressed), for: .touchUpInside)
+        profileView.favoriteLink.addTarget(self, action: #selector(navigateToFavoriteScreen), for: .touchUpInside)
     }
     
     override func loadView() {

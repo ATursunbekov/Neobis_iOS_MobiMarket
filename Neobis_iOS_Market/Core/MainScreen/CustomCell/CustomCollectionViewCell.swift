@@ -76,10 +76,22 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupCnstraints()
         self.backgroundColor = .clear
+        button.addTarget(self, action: #selector(likePressed), for: .touchUpInside)
     }
     
     @objc func productTapped() {
         delegate?.navigateToDetailScreen(id: id, image: image.image ?? UIImage())
+    }
+    
+    @objc func likePressed() {
+        MainViewModel.likeProduct(id: id)
+        if button.tintColor == .gray {
+            likeAmount.text = String((Int(likeAmount.text ?? "0") ?? 0) + 1)
+        } else {
+            let num = (Int(likeAmount.text ?? "0") ?? 0) - 1
+            likeAmount.text = String(num < 0 ? 0 : num)
+        }
+        button.updateLikeButton()
     }
     
     func setupCnstraints() {

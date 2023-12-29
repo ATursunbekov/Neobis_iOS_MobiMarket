@@ -1,20 +1,21 @@
 //
-//  MainViewController.swift
+//  FavoriteViewController.swift
 //  Neobis_iOS_Market
 //
-//  Created by Alikhan Tursunbekov on 20/12/23.
+//  Created by Alikhan Tursunbekov on 29/12/23.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-
-    let mainView = MainView()
+class FavoriteViewController: UIViewController {
+    
+    let mainView = FavoriteView()
     var viewModel: MainViewModelProtocol?
     
     init(viewModel: MainViewModelProtocol? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        mainView.backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -23,6 +24,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.titleView = mainView.titleLabel
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainView.backButton)
         viewModel?.delegate = self
     }
     
@@ -33,12 +36,16 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = false
-        viewModel?.getUserData()
+        tabBarController?.tabBar.isHidden = true
+        viewModel?.getFavoriteProducts()
+    }
+    
+    @objc func backPressed() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let viewModel = viewModel {
             return viewModel.mainData?.count ?? 0
@@ -52,28 +59,36 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if let viewModel = viewModel?.mainData {
             cell.configureData(data: viewModel[indexPath.row])
             cell.delegate = self
+            cell.button.tintColor = .systemRed
         }
         return cell
     }
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension FavoriteViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 165, height: 184)
     }
 }
 
-extension MainViewController: MainDelegate {
-    func successResponse() {
-        DispatchQueue.main.async {
-            self.mainView.collectionView.reloadData()
-        }
+extension FavoriteViewController: CustomCollectionViewCellDelegate {
+    func navigateToDetailScreen(id: Int, image: UIImage) {
+        let secondViewController = MainDeatailViewController(viewModel: MainDetailViewModel(id: id), productImage: image, isFavorite: true)
+        navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
 
-extension MainViewController: CustomCollectionViewCellDelegate {
-    func navigateToDetailScreen(id: Int, image: UIImage) {
-        let secondViewController = MainDeatailViewController(viewModel: MainDetailViewModel(id: id), productImage: image)
-        navigationController?.pushViewController(secondViewController, animated: true)
+extension FavoriteViewController: MainDelegate {
+    func successResponse() {
+        DispatchQueue.main.async {
+            self.mainView.collectionView.reloadData()
+            guard let data = self.viewModel?.mainData else {return}
+            if data.isEmpty {
+                self.mainView.collectionView.isHidden = true
+            } else {
+                self.mainView.emptyText.isHidden = true
+                self.mainView.emptyImage.isHidden = true
+            }
+        }
     }
 }
