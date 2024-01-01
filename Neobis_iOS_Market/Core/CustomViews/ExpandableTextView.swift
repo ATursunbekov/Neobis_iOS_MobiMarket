@@ -85,4 +85,9 @@ class ExpandableTextView: UIView, UITextViewDelegate {
     func getText() -> String{
         return textView.text
     }
+    
+    func setText(text: String) {
+        textView.text = text
+        placeholderLabel.isHidden = true
+    }
 }

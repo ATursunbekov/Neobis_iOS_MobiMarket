@@ -56,6 +56,7 @@ class ProductView: UIView {
     
     lazy var titleField: ExpandableTextView = {
         let textField = ExpandableTextView()
+        textField.setupPlaceholder(placeholder: "Цена")
         return textField
     }()
     
@@ -77,7 +78,7 @@ class ProductView: UIView {
         return textField
     }()
     
-    var collectionView: UICollectionView {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -85,7 +86,7 @@ class ProductView: UIView {
         collection.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collection.alwaysBounceHorizontal = true
         return collection
-    }
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

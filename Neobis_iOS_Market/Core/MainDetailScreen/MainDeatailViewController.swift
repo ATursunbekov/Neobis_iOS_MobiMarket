@@ -12,11 +12,15 @@ class MainDeatailViewController: UIViewController {
     let mainView = MainDetailView()
     var viewModel: MainDetailViewModelProtocol?
     var productImage: UIImage?
+    var peronalProduct: Bool?
+    var id: Int?
     
-    init(viewModel: MainDetailViewModelProtocol? = nil, productImage: UIImage? = nil, isFavorite: Bool = false) {
+    init(viewModel: MainDetailViewModelProtocol? = nil, productImage: UIImage? = nil,isFavorite: Bool = false ,peronalProduct: Bool? = false, id: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         self.productImage = productImage
+        self.peronalProduct = peronalProduct
+        self.id = id
         mainView.heartButton.tintColor = isFavorite ? .systemRed : .gray
     }
     
@@ -26,6 +30,9 @@ class MainDeatailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let personalProduct = peronalProduct, personalProduct {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mainView.changeButton)
+        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainView.backButton)
         viewModel?.delegate = self
         tabBarController?.tabBar.isHidden = true
@@ -53,9 +60,14 @@ class MainDeatailViewController: UIViewController {
         }
     }
     
+    @objc func changeProduct() {
+        navigationController?.pushViewController(ProductViewController(viewModel: ProductViewModel(), image: mainView.image.image, cost: 0, name: mainView.title.text,shortDescription: mainView.shortDescription.text ,longDescription: mainView.longDescription.text, id: id ?? 1), animated: true)
+    }
+    
     func addTargets() {
         mainView.backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
         mainView.heartButton.addTarget(self, action: #selector(likePressed), for: .touchUpInside)
+        mainView.changeButton.addTarget(self, action: #selector(changeProduct), for: .touchUpInside)
     }
 
     override func loadView() {

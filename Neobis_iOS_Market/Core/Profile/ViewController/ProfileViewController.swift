@@ -43,9 +43,22 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(secondViewController, animated: true)
     }
     
+    @objc func navigateToPersonalProductScreen() {
+        let secondViewController = MyProductViewController(viewModel: MyProductViewModel())
+        navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    @objc func leavePressed() {
+        let customAlertController = CustomLeaveAlert()
+        customAlertController.modalPresentationStyle = .overFullScreen
+        present(customAlertController, animated: false)
+    }
+    
     func setupTargets() {
+        profileView.leaveButton.addTarget(self, action: #selector(leavePressed), for: .touchUpInside)
         profileView.changeButton.addTarget(self, action: #selector(changeProfilePressed), for: .touchUpInside)
         profileView.favoriteLink.addTarget(self, action: #selector(navigateToFavoriteScreen), for: .touchUpInside)
+        profileView.userProductLink.addTarget(self, action: #selector(navigateToPersonalProductScreen), for: .touchUpInside)
     }
     
     override func loadView() {

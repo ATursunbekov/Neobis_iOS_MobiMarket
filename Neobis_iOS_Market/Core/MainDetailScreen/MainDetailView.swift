@@ -19,6 +19,17 @@ class MainDetailView: UIView {
         return button
     }()
     
+    lazy var changeButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Изм.", for: .normal)
+        button.titleLabel?.font = UIFont(name: "GothamPro-Medium", size: 16)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(hex: "#C0C0C0")
+        button.frame = CGRect(x: 0, y: 0, width: 56, height: 28)
+        button.layer.cornerRadius = 14
+        return button
+    }()
+    
     lazy var image: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleToFill

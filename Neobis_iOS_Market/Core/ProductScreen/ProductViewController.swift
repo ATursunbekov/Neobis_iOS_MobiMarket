@@ -12,9 +12,22 @@ class ProductViewController: UIViewController {
     let productView = ProductView()
     var viewModel: ProductViewModelProtocol?
     
-    init(viewModel: ProductViewModelProtocol? = nil) {
+    var image: UIImage?
+    var cost: Int?
+    var name: String?
+    var shortDescription: String?
+    var longDescription: String?
+    var id: Int?
+    
+    init(viewModel: ProductViewModelProtocol? = nil, image: UIImage? = nil, cost: Int? = nil, name: String? = nil, shortDescription: String? = nil, longDescription: String? = nil, id: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
+        self.image = image
+        self.cost = cost
+        self.name = name
+        self.shortDescription = shortDescription
+        self.longDescription = longDescription
+        self.id = id
     }
     
     required init?(coder: NSCoder) {
@@ -28,6 +41,15 @@ class ProductViewController: UIViewController {
         setuTargets()
         productView.collectionView.delegate = self
         productView.collectionView.dataSource = self
+        viewModel?.delegate = self
+        
+        if let image = image, let cost = cost, let name = name, let shortDescription = shortDescription, let longDescription = longDescription {
+            viewModel?.images.append(image)
+            productView.titleField.setText(text: String(cost))
+            productView.nameField.setText(text: name)
+            productView.shortDescription.setText(text: shortDescription)
+            productView.longDescription.setText(text: longDescription)
+        }
     }
     
     override func loadView() {
@@ -39,9 +61,15 @@ class ProductViewController: UIViewController {
     }
     
     @objc func savePressed() {
-        dismiss(animated: true)
+        if let cost = cost, let name = name, let shortDescription = shortDescription, let longDescription = longDescription, let id = id {
+            let product = ProductModel(name: name, shortDescription: shortDescription, fullDescription: longDescription, price: cost)
+            viewModel?.updateProductData(body: product, id: id)
+        } else {
+            let parameters = ["name" : productView.nameField.getText(), "shortDescription" : productView.shortDescription.getText(), "fullDescription" : productView.longDescription.getText(), "price" : productView.titleField.getText()]
+            viewModel?.uploadImagesAndJson(additionalParameters: parameters)
+        }
     }
-    
+
     @objc func addPhoto() {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -60,6 +88,7 @@ extension ProductViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             viewModel?.images.append(image)
+            productView.collectionView.reloadData()
         }
         dismiss(animated: true)
     }
@@ -86,5 +115,13 @@ extension ProductViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension ProductViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 76, height: 96)
+    }
+}
+
+extension ProductViewController: ProductDelegate {
+    func success() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true)
+        }
     }
 }

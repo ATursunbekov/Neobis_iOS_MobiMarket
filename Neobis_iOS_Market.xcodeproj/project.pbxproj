@@ -72,9 +72,16 @@
 		77B1586A2B288A76006EB26D /* GothamPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158662B288A76006EB26D /* GothamPro-Bold.ttf */; };
 		77B1586B2B288A76006EB26D /* GothamPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158672B288A76006EB26D /* GothamPro-Medium.ttf */; };
 		77B1586C2B288A76006EB26D /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77B158682B288A76006EB26D /* GothamPro.ttf */; };
+		77B567232B42DB01001EC7D9 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B567222B42DB01001EC7D9 /* ProductModel.swift */; };
+		77B567252B42E651001EC7D9 /* CustomLeaveAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B567242B42E651001EC7D9 /* CustomLeaveAlert.swift */; };
 		77B59FA72B3AEC3200622FFD /* UploadingUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B59FA62B3AEC3200622FFD /* UploadingUserData.swift */; };
 		77BF29052B36E5B0008E4575 /* PhoneConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF29042B36E5B0008E4575 /* PhoneConfirmationView.swift */; };
 		77BF29072B36E774008E4575 /* PhoneConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF29062B36E774008E4575 /* PhoneConfirmationViewController.swift */; };
+		77EDB0372B41657D00099443 /* MyProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB0362B41657D00099443 /* MyProductViewController.swift */; };
+		77EDB03A2B41668000099443 /* MyProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB0392B41668000099443 /* MyProductView.swift */; };
+		77EDB03C2B41671000099443 /* MyProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB03B2B41671000099443 /* MyProductCollectionViewCell.swift */; };
+		77EDB03E2B41680300099443 /* MyProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB03D2B41680300099443 /* MyProductViewModel.swift */; };
+		77EDB0412B4171CF00099443 /* CustomOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EDB0402B4171CF00099443 /* CustomOptionView.swift */; };
 		77FA5B112B347D5C0056EC46 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA5B102B347D5C0056EC46 /* CustomTabBarController.swift */; };
 		77FA5B142B34BD350056EC46 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA5B132B34BD350056EC46 /* ProfileViewController.swift */; };
 		77FA5B172B34BD5A0056EC46 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FA5B162B34BD5A0056EC46 /* WalletViewController.swift */; };
@@ -150,9 +157,16 @@
 		77B158662B288A76006EB26D /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Bold.ttf"; sourceTree = "<group>"; };
 		77B158672B288A76006EB26D /* GothamPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GothamPro-Medium.ttf"; sourceTree = "<group>"; };
 		77B158682B288A76006EB26D /* GothamPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GothamPro.ttf; sourceTree = "<group>"; };
+		77B567222B42DB01001EC7D9 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		77B567242B42E651001EC7D9 /* CustomLeaveAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLeaveAlert.swift; sourceTree = "<group>"; };
 		77B59FA62B3AEC3200622FFD /* UploadingUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingUserData.swift; sourceTree = "<group>"; };
 		77BF29042B36E5B0008E4575 /* PhoneConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationView.swift; sourceTree = "<group>"; };
 		77BF29062B36E774008E4575 /* PhoneConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConfirmationViewController.swift; sourceTree = "<group>"; };
+		77EDB0362B41657D00099443 /* MyProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductViewController.swift; sourceTree = "<group>"; };
+		77EDB0392B41668000099443 /* MyProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductView.swift; sourceTree = "<group>"; };
+		77EDB03B2B41671000099443 /* MyProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		77EDB03D2B41680300099443 /* MyProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductViewModel.swift; sourceTree = "<group>"; };
+		77EDB0402B4171CF00099443 /* CustomOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOptionView.swift; sourceTree = "<group>"; };
 		77FA5B102B347D5C0056EC46 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		77FA5B132B34BD350056EC46 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		77FA5B162B34BD5A0056EC46 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +324,7 @@
 				771528642B3EB59D00D83D0C /* ProductView.swift */,
 				771528682B3EC93100D83D0C /* ProductViewModel.swift */,
 				7715286A2B3ECBA200D83D0C /* ProductCollectionViewCell.swift */,
+				77B567222B42DB01001EC7D9 /* ProductModel.swift */,
 			);
 			path = ProductScreen;
 			sourceTree = "<group>";
@@ -412,6 +427,7 @@
 		773884082B2A099900C271F1 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				77EDB03F2B4171B300099443 /* ProductScreen */,
 				773884092B2A09DF00C271F1 /* CustomTextField.swift */,
 				773E7B832B2B6C3400D1E9F4 /* CustomSecureTextField.swift */,
 				773E7B872B2B8FB500D1E9F4 /* CustomToastView.swift */,
@@ -419,6 +435,7 @@
 				771373452B359C1800103708 /* CustomButton.swift */,
 				77733A9F2B3DF38B000EEE56 /* CustomLikeAlert.swift */,
 				771528662B3EBDF400D83D0C /* ExpandableTextView.swift */,
+				77B567242B42E651001EC7D9 /* CustomLeaveAlert.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -581,6 +598,7 @@
 		77B1585C2B286EB8006EB26D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				77EDB0382B41658200099443 /* MyProductScreen */,
 				771528612B3EB51F00D83D0C /* ProductScreen */,
 				77733AA12B3E0054000EEE56 /* FavoriteScreen */,
 				776706BF2B30476300E7DB17 /* API */,
@@ -680,6 +698,25 @@
 				77BF29062B36E774008E4575 /* PhoneConfirmationViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		77EDB0382B41658200099443 /* MyProductScreen */ = {
+			isa = PBXGroup;
+			children = (
+				77EDB0362B41657D00099443 /* MyProductViewController.swift */,
+				77EDB0392B41668000099443 /* MyProductView.swift */,
+				77EDB03B2B41671000099443 /* MyProductCollectionViewCell.swift */,
+				77EDB03D2B41680300099443 /* MyProductViewModel.swift */,
+			);
+			path = MyProductScreen;
+			sourceTree = "<group>";
+		};
+		77EDB03F2B4171B300099443 /* ProductScreen */ = {
+			isa = PBXGroup;
+			children = (
+				77EDB0402B4171CF00099443 /* CustomOptionView.swift */,
+			);
+			path = ProductScreen;
 			sourceTree = "<group>";
 		};
 		77FA5B122B34BD220056EC46 /* Profile */ = {
@@ -814,7 +851,9 @@
 				7720CBAB2B3C488100F43164 /* CustomCollectionViewCell.swift in Sources */,
 				770FC2712B2C6123001E91CB /* RegistrationView.swift in Sources */,
 				774604C42B31DB2A005ADAD0 /* LoginViewModel.swift in Sources */,
+				77EDB0412B4171CF00099443 /* CustomOptionView.swift in Sources */,
 				7720CBB92B3C812000F43164 /* MainDetailViewModel.swift in Sources */,
+				77EDB03E2B41680300099443 /* MyProductViewModel.swift in Sources */,
 				7738840D2B2A0A0200C271F1 /* Extention+UIColor.swift in Sources */,
 				771373462B359C1800103708 /* CustomButton.swift in Sources */,
 				77733AA32B3E0067000EEE56 /* FavoriteViewController.swift in Sources */,
@@ -849,7 +888,11 @@
 				771528632B3EB57500D83D0C /* ProductViewController.swift in Sources */,
 				772B38C32B2CF2640067A1B6 /* ConfirmationView.swift in Sources */,
 				774604BE2B317ADB005ADAD0 /* RefreshTokenRequest.swift in Sources */,
+				77B567252B42E651001EC7D9 /* CustomLeaveAlert.swift in Sources */,
 				77A608D12B33055200EC79F4 /* MainViewController.swift in Sources */,
+				77EDB03A2B41668000099443 /* MyProductView.swift in Sources */,
+				77EDB0372B41657D00099443 /* MyProductViewController.swift in Sources */,
+				77EDB03C2B41671000099443 /* MyProductCollectionViewCell.swift in Sources */,
 				771373442B3582FC00103708 /* ProfileView.swift in Sources */,
 				775097C72B38C4FC006EEB80 /* PhoneModel.swift in Sources */,
 				77FA5B142B34BD350056EC46 /* ProfileViewController.swift in Sources */,
@@ -870,6 +913,7 @@
 				77BF29072B36E774008E4575 /* PhoneConfirmationViewController.swift in Sources */,
 				7770F6112B396FD100DFE9DF /* ConfirmationModel.swift in Sources */,
 				77A608CC2B32E4A500EC79F4 /* RegisterViewModel.swift in Sources */,
+				77B567232B42DB01001EC7D9 /* ProductModel.swift in Sources */,
 				771373772B36191900103708 /* PhoneView.swift in Sources */,
 				77FA5B192B34BD6C0056EC46 /* ChatViewController.swift in Sources */,
 				77733A9E2B3DED13000EEE56 /* LikeModel.swift in Sources */,
