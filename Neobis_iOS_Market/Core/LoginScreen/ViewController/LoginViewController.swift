@@ -55,12 +55,17 @@ class LoginViewController: UIViewController {
     
     @objc func loginPressed() {
         
-        let userRequest = SignInUserRequest(
-            username: loginView.customTextField.textField.text ?? "",
-            password: loginView.passwordTextField.textField.text ?? ""
-        )
-        
-        viewModel?.loginUser(body: userRequest)
+//        let userRequest = SignInUserRequest(
+//            username: loginView.customTextField.textField.text ?? "",
+//            password: loginView.passwordTextField.textField.text ?? ""
+//        )
+//        
+//        viewModel?.loginUser(body: userRequest)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = windowScene.delegate as? SceneDelegate {
+            sceneDelegate.window?.rootViewController = CustomTabBarController()
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
     }
     
     @objc func registerPressed() {

@@ -61,14 +61,14 @@ class CustomTabBarController: UITabBarController {
             ),
             generateVC(
                 viewController: WalletViewController(),
-                title: "Кошелек",
-                image: UIImage(named: "wallet")
+                title: "Поиск",
+                image: UIImage(systemName: "magnifyingglass")
             ),
             placeholder, // Placeholder for the center tab
             generateVC(
                 viewController: UIViewController(),
-                title: "Чаты",
-                image: UIImage(named: "chat")
+                title: "Любимые",
+                image: UIImage(systemName: "heart.fill")
             ),
             generateVC(
                 viewController: UINavigationController(rootViewController: ProfileViewController(viewModel: ProfileViewModel())),
